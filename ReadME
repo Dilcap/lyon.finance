@@ -1,2 +1,4 @@
-Hello
-Hello
+lyon.finance
+
+Site vitrine statique (HTML/CSS) pour Lyon Finance.
+Déployable directement sur Vercel (aucune config build nécessaire).
