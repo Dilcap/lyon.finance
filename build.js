@@ -26,9 +26,9 @@ for (const file of fs.readdirSync(pagesDir)) {
   const outPath = path.join(outDir, 'index.html');
 
   const page = head
-    .replace('{{TITLE}}', titleMatch[1])
-    .replace('{{DESCRIPTION}}', descMatch[1])
-    .replace('{{PATH}}', '/' + slug + '/') +
+    .replaceAll('{{TITLE}}', titleMatch[1])
+    .replaceAll('{{DESCRIPTION}}', descMatch[1])
+    .replaceAll('{{PATH}}', '/' + slug + '/') +
     content +
     foot;
 
