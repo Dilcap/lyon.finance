@@ -329,10 +329,13 @@ h2 {
 }
 
 .dash-list li::before {
-  content: "—";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--red);
+  top: 13px;
+  width: 12px;
+  height: 1px;
+  background: var(--red);
 }
 
 /* Steps */

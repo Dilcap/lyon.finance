@@ -9,7 +9,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
   });
 });
 
-/* Actualités corporate finance à Lyon — flux RSS Google Actualités (gratuit, sans clé). */
+/* Actualités corporate finance à Lyon : flux RSS Google Actualités (gratuit, sans clé). */
 (function () {
   var list = document.getElementById('news-list');
   if (!list) return;
@@ -32,7 +32,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
       var meta = document.createElement('span');
       meta.className = 'news-meta';
-      meta.textContent = item.source + (item.date ? ' — ' + item.date : '');
+      meta.textContent = item.source + (item.date ? ' · ' + item.date : '');
 
       li.appendChild(a);
       li.appendChild(meta);
