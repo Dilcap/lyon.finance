@@ -63,15 +63,20 @@ nav a:hover { color: #fff; }
 
 .hero h1 {
   font-size: 2.6rem;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero p {
   color: #cfd6e4;
-  font-size: 1.15rem;
-  max-width: 560px;
-  margin: 0 auto 32px;
+  font-size: 1.1rem;
+  max-width: 680px;
+  margin: 0 auto 20px;
 }
+
+.hero .btn { margin-top: 12px; }
 
 .btn {
   display: inline-block;
@@ -109,15 +114,137 @@ section h2 {
 .card h3 { margin-bottom: 10px; color: var(--navy); }
 .card p { color: var(--muted); }
 
-.about, .contact { text-align: center; }
+.contact { text-align: center; }
 
-.about p, .contact p {
+.contact p {
   max-width: 640px;
   margin: 0 auto;
   color: var(--muted);
 }
 
 .contact p { margin-bottom: 24px; }
+
+/* Content sections */
+section:nth-of-type(even) { background: #fff; }
+
+.lead {
+  max-width: 760px;
+  margin: 0 auto 20px;
+  color: var(--muted);
+}
+
+section h2 + .lead,
+section h2 + p.lead { margin-top: -8px; }
+
+.check-list {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.check-list li {
+  position: relative;
+  padding: 6px 0 6px 28px;
+  color: var(--text);
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.check-list.two-col {
+  max-width: 900px;
+  columns: 2;
+  column-gap: 40px;
+}
+
+.check-list.two-col li { break-inside: avoid; }
+
+/* Numbered process steps */
+.step {
+  display: flex;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.step-number {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-body h3 {
+  color: var(--navy);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.step-body p { color: var(--muted); margin-bottom: 12px; }
+
+.step-body .check-list { margin-left: 0; }
+
+/* CTA sections */
+.valuation-cta, .final-cta {
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  color: #fff;
+  text-align: center;
+}
+
+.valuation-cta h2, .final-cta h2 { color: #fff; }
+
+.valuation-cta .lead, .final-cta .lead { color: #cfd6e4; }
+
+.valuation-cta .check-list li,
+.final-cta .check-list li { color: #e8ebf1; }
+
+.valuation-cta .check-list, .final-cta .check-list { text-align: left; }
+
+/* FAQ */
+.faq details {
+  max-width: 760px;
+  margin: 0 auto 12px;
+  background: #fff;
+  border: 1px solid #e5e5e2;
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--navy);
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  float: right;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.faq details[open] summary::after { content: "−"; }
+
+.faq details p {
+  color: var(--muted);
+  margin-top: 12px;
+}
 
 .site-footer {
   background: var(--navy);
@@ -131,4 +258,6 @@ section h2 {
   .cards { grid-template-columns: 1fr; }
   nav a { margin-left: 16px; }
   .hero h1 { font-size: 2rem; }
+  .step { flex-direction: column; gap: 12px; }
+  .check-list.two-col { columns: 1; }
 }
