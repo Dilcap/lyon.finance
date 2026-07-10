@@ -263,6 +263,122 @@ strong { font-weight: 600; }
 
 .section-grid--media-left .section-media { order: -1; }
 
+.situation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.situation-card {
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(180deg, #fffdf8 0%, #f3ede2 100%);
+  border: 1px solid var(--line);
+  padding: 24px 22px 22px;
+  min-height: 168px;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.situation-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(163, 23, 42, 0.35);
+  box-shadow: 0 12px 26px rgba(33, 31, 26, 0.08);
+}
+
+.situation-card h3 {
+  font-size: 1.18rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.situation-card p {
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+
+.proof-grid,
+.case-grid,
+.testimonial-grid,
+.team-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.proof-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-grid,
+.testimonial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.team-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.proof-card,
+.case-card,
+.testimonial-card,
+.team-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 22px;
+}
+
+.case-kicker,
+.team-role {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.case-meta {
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.testimonial-card p:first-child {
+  font-size: 1.02rem;
+}
+
+.testimonial-card footer,
+.team-card p {
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
+
+.team-photo {
+  min-height: 160px;
+  background: var(--paper-deep);
+  border: 1px dashed var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+
+.chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .section-head {
   position: sticky;
   top: 100px;
