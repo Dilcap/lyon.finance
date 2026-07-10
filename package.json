@@ -1,0 +1,12 @@
+{
+  "name": "lyon.finance",
+  "version": "1.0.0",
+  "description": "Lyon Finance - Cabinet de conseil en cession & transmission d'entreprise à Lyon",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "private": true
+}
