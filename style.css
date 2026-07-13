@@ -199,7 +199,18 @@ strong { font-weight: 600; }
 
 .carousel-headline:hover { color: var(--red); }
 
+.carousel-headline,
 .carousel-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carousel-headline { -webkit-line-clamp: 3; }
+
+.carousel-desc {
+  -webkit-line-clamp: 2;
   font-size: 0.85rem;
   color: var(--ink-soft);
   animation: carousel-fade-in 0.5s ease 0.15s both;

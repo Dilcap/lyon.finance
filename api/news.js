@@ -6,11 +6,12 @@ const FEED_URL =
   encodeURIComponent(
     '("fusion-acquisition" OR "cession d\'entreprise" OR "levée de fonds" OR ' +
     '"reprise d\'entreprise" OR "capital-investissement" OR "transmission d\'entreprise") ' +
-    '(Lyon OR lyonnais OR "Auvergne-Rhône-Alpes") -football -OL -rugby -mercato -match'
+    '(Lyon OR lyonnais OR "Auvergne-Rhône-Alpes") -football -OL -rugby -mercato -match when:30d'
   ) +
   '&hl=fr&gl=FR&ceid=FR:fr';
 
 const MAX_ITEMS = 5;
+const MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000; /* 30 jours, filet de sécurité en plus de when:30d */
 
 function textBetween(block, tag) {
   const match = block.match(new RegExp('<' + tag + '[^>]*>([\\s\\S]*?)</' + tag + '>'));
@@ -52,7 +53,7 @@ module.exports = async function handler(req, res) {
             : d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })
         };
       })
-      .filter((item) => item.title)
+      .filter((item) => item.title && item.ts && Date.now() - item.ts <= MAX_AGE_MS)
       .sort((a, b) => b.ts - a.ts)
       .slice(0, MAX_ITEMS)
       .map(({ ts, ...item }) => item);
