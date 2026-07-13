@@ -81,8 +81,15 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
     var desc = document.createElement('p');
     desc.className = 'carousel-desc';
-    desc.textContent = 'Relayé par ' + item.source + (item.date ? ', le ' + item.date + '.' : '.');
+    desc.textContent = item.excerpt
+      ? item.excerpt
+      : 'Relayé par ' + item.source + (item.date ? ', le ' + item.date + '.' : '.');
     copy.appendChild(desc);
+
+    var meta = document.createElement('span');
+    meta.className = 'carousel-meta';
+    meta.textContent = item.source + (item.date ? ' · ' + item.date : '');
+    copy.appendChild(meta);
 
     slide.appendChild(copy);
     return slide;

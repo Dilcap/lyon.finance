@@ -186,6 +186,24 @@ strong { font-weight: 600; }
   display: block;
 }
 
+@media (max-width: 860px) {
+  .carousel-slide:not(.is-placeholder) {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-slide:not(.is-placeholder) img {
+    width: 100%;
+    height: auto;
+    min-height: 180px;
+    max-height: 220px;
+  }
+
+  .carousel-copy {
+    margin-top: 16px;
+    padding: 20px 28px 24px;
+  }
+}
+
 .carousel-copy {
   padding: 28px 32px;
   display: flex;
@@ -216,10 +234,16 @@ strong { font-weight: 600; }
 .carousel-headline { -webkit-line-clamp: 3; }
 
 .carousel-desc {
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   font-size: 0.85rem;
   color: var(--ink-soft);
   animation: carousel-fade-in 0.5s ease 0.15s both;
+}
+
+.carousel-meta {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  opacity: 0.8;
 }
 
 @keyframes carousel-fade-in {
@@ -893,19 +917,6 @@ h2 {
 
   .situation-grid {
     grid-template-columns: 1fr;
-  }
-
-  .carousel-slide {
-    grid-template-columns: 1fr;
-  }
-
-  .carousel-slide img {
-    min-height: 160px;
-  }
-
-  .carousel-copy {
-    margin-top: 16px;
-    padding: 20px 44px;
   }
 
   .topbar-inner {
