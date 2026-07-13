@@ -41,7 +41,7 @@
   <main>
 
     <section class="hero">
-      <div class="wrap hero-grid">
+      <div class="wrap">
         <div class="hero-main">
           <h1>Transmettre ou vendre son entreprise sur Lyon</h1>
           <div class="hero-lede">
@@ -59,14 +59,22 @@
             <a href="#approche" class="textlink">Découvrir notre approche</a>
           </div>
         </div>
-        <aside class="hero-news" aria-label="Dernières actualités de la corporate finance à Lyon">
-          <p class="news-heading">Dernières actualités</p>
-          <p class="news-sub">Corporate finance à Lyon et en Auvergne-Rhône-Alpes</p>
-          <ol class="news-list" id="news-list">
-            <li class="news-placeholder">Chargement des actualités…</li>
-          </ol>
-          <p class="news-note">Revue de presse mise à jour automatiquement via Google&nbsp;Actualités.</p>
-        </aside>
+
+        <div class="news-carousel" aria-label="Actualités de la finance d’entreprise à Lyon et en Auvergne-Rhône-Alpes">
+          <p class="news-title">Actualités de la finance d’entreprise à Lyon et en Auvergne-Rhône-Alpes</p>
+          <div class="carousel" id="news-carousel">
+            <div class="carousel-track" id="news-track">
+              <div class="carousel-slide is-placeholder">
+                <div class="carousel-copy">
+                  <p class="carousel-headline">Chargement des actualités…</p>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Actualité précédente">&lsaquo;</button>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Actualité suivante">&rsaquo;</button>
+            <div class="carousel-dots" id="news-dots"></div>
+          </div>
+        </div>
       </div>
     </section>
 
