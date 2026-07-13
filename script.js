@@ -1,3 +1,29 @@
+/* Menu déroulant mobile. */
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('topnav');
+  if (!toggle || !nav) return;
+
+  function close() {
+    toggle.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('is-open');
+  }
+
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    nav.classList.toggle('is-open', !open);
+  });
+
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', close);
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') close();
+  });
+})();
+
 /* Navigation interne : défilement doux sans modifier l'URL (pas de #ancre). */
 document.querySelectorAll('a[href^="#"]').forEach(function (link) {
   link.addEventListener('click', function (event) {
