@@ -13,7 +13,11 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 body {
   font-family: var(--sans);
@@ -22,6 +26,8 @@ body {
   background: var(--paper);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .wrap {
@@ -877,6 +883,10 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .situation-grid {
+    grid-template-columns: 1fr;
+  }
+
   .carousel-slide {
     grid-template-columns: 1fr;
   }
@@ -886,6 +896,7 @@ h2 {
   }
 
   .carousel-copy {
+    margin-top: 16px;
     padding: 20px 44px;
   }
 
