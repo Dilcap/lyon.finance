@@ -540,6 +540,16 @@ strong { font-weight: 600; }
   margin-bottom: 16px;
 }
 
+.team-logo {
+  height: 36px;
+  max-width: 140px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 14px;
+  display: block;
+}
+
 .chip-grid {
   display: flex;
   flex-wrap: wrap;
