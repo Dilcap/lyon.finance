@@ -595,6 +595,25 @@ strong { font-weight: 600; }
   background: linear-gradient(to top, rgba(15, 13, 10, 0.72), rgba(15, 13, 10, 0));
 }
 
+/* Filtre aux couleurs du site : tons adoucis, voile bleu Lyon en haut, chaleur papier en bas */
+.banner--tinted img {
+  filter: saturate(0.78) sepia(0.14) contrast(1.04) brightness(0.97);
+}
+
+.banner--tinted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(28, 63, 124, 0.38), rgba(28, 63, 124, 0.08) 55%, rgba(163, 23, 42, 0.12));
+  mix-blend-mode: multiply;
+}
+
+.banner--tinted figcaption {
+  z-index: 1;
+}
+
 .banner figcaption .wrap {
   display: block;
   color: var(--paper);
