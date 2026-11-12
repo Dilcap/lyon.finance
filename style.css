@@ -597,6 +597,7 @@ strong { font-weight: 600; }
 
 /* Filtre aux couleurs du site : tons adoucis, voile bleu Lyon en haut, chaleur papier en bas */
 .banner--tinted img {
+  object-position: center top; /* garde Fourvière et la Saône dans le cadre */
   filter: saturate(0.78) sepia(0.14) contrast(1.04) brightness(0.97);
 }
 
